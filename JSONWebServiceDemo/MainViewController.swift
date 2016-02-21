@@ -48,6 +48,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return tableViewCell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let mediaEntry = self.mediaEntries[indexPath.row]
+        let viewController = DetailViewController(mediaEntry: mediaEntry);
+        self.navigationController?.pushViewController(viewController, animated: true);
+    }
+    
     func refreshFeed() {
         self.feedManager.getTopMovies { (results) -> Void in
             self.mediaEntries = results

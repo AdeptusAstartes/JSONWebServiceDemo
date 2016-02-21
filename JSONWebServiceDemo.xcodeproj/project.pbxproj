@@ -13,6 +13,8 @@
 		F2372D9E1C798C2400475C92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2372D9D1C798C2400475C92 /* LaunchScreen.storyboard */; };
 		F2372DA21C798DB200475C92 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DA11C798DB200475C92 /* FeedManager.swift */; };
 		F2372DA61C79938100475C92 /* MediaEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DA51C79938100475C92 /* MediaEntryModel.swift */; };
+		F2372DA91C79A84E00475C92 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DA71C79A84E00475C92 /* DetailViewController.swift */; };
+		F2372DAA1C79A84E00475C92 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2372DA81C79A84E00475C92 /* DetailViewController.xib */; };
 		F2C194CF1C77F1B800CA7849 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C194CD1C77F1B800CA7849 /* MainViewController.swift */; };
 		F2C194D01C77F1B800CA7849 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C194CE1C77F1B800CA7849 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		F2372D9D1C798C2400475C92 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2372DA11C798DB200475C92 /* FeedManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		F2372DA51C79938100475C92 /* MediaEntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaEntryModel.swift; sourceTree = "<group>"; };
+		F2372DA71C79A84E00475C92 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F2372DA81C79A84E00475C92 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		F2C194CD1C77F1B800CA7849 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F2C194CE1C77F1B800CA7849 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +94,8 @@
 				F2C194CD1C77F1B800CA7849 /* MainViewController.swift */,
 				F2C194CE1C77F1B800CA7849 /* MainViewController.xib */,
 				F2372D9D1C798C2400475C92 /* LaunchScreen.storyboard */,
+				F2372DA71C79A84E00475C92 /* DetailViewController.swift */,
+				F2372DA81C79A84E00475C92 /* DetailViewController.xib */,
 			);
 			path = JSONWebServiceDemo;
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 				F235D07A1C77E986008310D8 /* Assets.xcassets in Resources */,
 				F2372D9E1C798C2400475C92 /* LaunchScreen.storyboard in Resources */,
 				F2C194D01C77F1B800CA7849 /* MainViewController.xib in Resources */,
+				F2372DAA1C79A84E00475C92 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +241,7 @@
 			files = (
 				F2372DA21C798DB200475C92 /* FeedManager.swift in Sources */,
 				F235D0731C77E986008310D8 /* AppDelegate.swift in Sources */,
+				F2372DA91C79A84E00475C92 /* DetailViewController.swift in Sources */,
 				F2C194CF1C77F1B800CA7849 /* MainViewController.swift in Sources */,
 				F2372DA61C79938100475C92 /* MediaEntryModel.swift in Sources */,
 			);
