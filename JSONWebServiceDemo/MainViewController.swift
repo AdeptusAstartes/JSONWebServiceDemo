@@ -11,11 +11,12 @@ import UIKit
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var mediaEntries: [MediaEntryModel] = Array()
-    var feedManager: FeedManager
+    var genres: [GenreModel] = Array()
+    var genreManager: GenreManager
+    let genreReuseIdentifer: String = "genreReuseIdentifer"
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        self.feedManager = FeedManager()
+        self.genreManager = GenreManager()
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -27,9 +28,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let genreBarButtonItem = UIBarButtonItem(title: "Genres", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("genreButtonHit:"))
-        genreBarButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
-        self.navigationItem.leftBarButtonItem = genreBarButtonItem
+        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.genreReuseIdentifer)
+        
+        self.title = "iTunes Music Genres"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         
         self.refreshFeed()
     }
@@ -41,16 +43,31 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     //MARK: - UITableViewDataSource, UITableViewDelegate
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return genres.count
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mediaEntries.count;
+        return genres[section].subgenres.count;
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let genre = self.genres[section]
+        return genre.name
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let tableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "test")
+        let tableViewCell = tableView.dequeueReusableCellWithIdentifier(self.genreReuseIdentifer, forIndexPath: indexPath) as UITableViewCell
+        tableViewCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
-        let mediaEntry = self.mediaEntries[indexPath.row]
+        let genre = self.genres[indexPath.section]
+        let subgenre = genre.subgenres[indexPath.row]
         
-        if let name = mediaEntry.name {
+        if let name = subgenre.name {
             tableViewCell.textLabel?.text = name
         }
         
@@ -58,14 +75,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let mediaEntry = self.mediaEntries[indexPath.row]
-        let viewController = DetailViewController(mediaEntry: mediaEntry);
-        self.navigationController?.pushViewController(viewController, animated: true);
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let genre = self.genres[indexPath.section]
+        let subgenre = genre.subgenres[indexPath.row]
+        
+        let viewController = SubgenreViewController(subgenre: subgenre)
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+        return 1;
     }
     
     func refreshFeed() {
-        self.feedManager.getTopMovies { (results) -> Void in
-            self.mediaEntries = results
+        self.genreManager.getMusicGenres { (results) -> Void in
+            self.genres = results
             self.reloadTable()
         }
     }
@@ -74,10 +99,5 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             self.tableView.reloadData()
         }
-    }
-    
-    //MARK: - Internal Methods
-    func genreButtonHit(sender: UIBarButtonItem) {
-        
     }
 }

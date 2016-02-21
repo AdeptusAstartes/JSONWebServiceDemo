@@ -8,14 +8,14 @@
 
 import UIKit
 
-
 class GenreModel: CustomStringConvertible, NSCoding {
     var genreId: String? = nil
     var name:String? = nil
     var topSongsURL: String? = nil
+    var isSubgenre: Bool = false
+    var subgenres: [GenreModel] = Array();
     
     init(json: [String: AnyObject]) {
-        
         if let genreId = json["id"] as? String {
             self.genreId = genreId
         }
@@ -27,22 +27,36 @@ class GenreModel: CustomStringConvertible, NSCoding {
         if let rssUrls = json["rssUrls"] as? [String: AnyObject], topSongsURL = rssUrls["topSongs"] as? String {
             self.topSongsURL = topSongsURL
         }
+        
+        if let subgenresDict = json["subgenres"] as? [String: AnyObject] {
+            for (_, value) in subgenresDict {
+                if let genre = value as? [String: AnyObject] {
+                    let genre = GenreModel(json: genre)
+                    genre.isSubgenre = true
+                    self.subgenres.append(genre)
+                }
+            }
+        }
     }
     
     @objc required init?(coder aDecoder: NSCoder) {
         self.genreId = aDecoder.decodeObjectForKey("genreId") as? String
         self.name = aDecoder.decodeObjectForKey("name") as? String
         self.topSongsURL = aDecoder.decodeObjectForKey("topSongsURL") as? String
+        self.isSubgenre = aDecoder.decodeBoolForKey("isSubgenre")
+        self.subgenres = aDecoder.decodeObjectForKey("subgenres") as! [GenreModel]
     }
     
     @objc func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self.genreId, forKey: "genreId")
         aCoder.encodeObject(self.name, forKey: "name")
         aCoder.encodeObject(self.topSongsURL, forKey: "topSongsURL")
+        aCoder.encodeBool(self.isSubgenre, forKey: "isSubgenre")
+        aCoder.encodeObject(self.subgenres, forKey: "subgenres")
     }
     
     var description: String {
-        return "genreId: \(self.genreId)\nname: \(self.name)\ntopSongsURL: \(self.topSongsURL)\n\n"
+        return "genreId: \(self.genreId)\nname: \(self.name)\ntopSongsURL: \(self.topSongsURL)\nsubgenres: \(self.subgenres.count)\n\n"
     }
     
 }

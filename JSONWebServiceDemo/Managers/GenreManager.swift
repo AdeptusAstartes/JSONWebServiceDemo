@@ -30,7 +30,13 @@ class GenreManager {
                 
             }
             
-            print(genres)
+            genres.sortInPlace({ (genreModel1, genreModel2) -> Bool in
+                if let genreName1 = genreModel1.name, genreName2 = genreModel2.name {
+                    return genreName1 < genreName2
+                }
+                
+                return true
+            })
             
             completion(results: genres)
         }

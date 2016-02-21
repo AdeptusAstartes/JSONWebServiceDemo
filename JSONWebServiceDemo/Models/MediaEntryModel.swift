@@ -11,6 +11,7 @@ import UIKit
 class MediaEntryModel: CustomStringConvertible, NSCoding {
     var name:String? = nil
     var summary: String? = nil
+    var artistName: String? = nil
     var previewURL: String? = nil
     
     init(json: [String: AnyObject]) {
