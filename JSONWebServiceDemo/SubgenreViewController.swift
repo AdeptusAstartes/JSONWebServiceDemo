@@ -16,11 +16,15 @@ class SubgenreViewController: UIViewController, UITableViewDataSource, UITableVi
     var feedManager: FeedManager
     let subgenreReuseIdentifer: String = "subgenreReuseIdentifer"
     
-    init(subgenre: GenreModel) {
+    init(subgenre: GenreModel, mainGenreName: String) {
         self.subgenre = subgenre
         self.feedManager = FeedManager();
         
         super.init(nibName: "SubgenreViewController", bundle: nil)
+        
+        if let name = self.subgenre?.genreName {
+            self.title = "Top 10 \(mainGenreName): \(name) Songs"
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,10 +35,6 @@ class SubgenreViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.subgenreReuseIdentifer)
-        
-        if let name = self.subgenre?.name {
-            self.title = "Top 10 \(name) Songs"
-        }
         
         self.refreshFeed()
     }

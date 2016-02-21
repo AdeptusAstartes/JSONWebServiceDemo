@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MediaEntryModel: CustomStringConvertible, NSCoding {
+class MediaEntryModel: CustomStringConvertible {
     var name:String? = nil
     var summary: String? = nil
     var artistName: String? = nil
     var previewURL: String? = nil
+    var imagePath: String? = nil
     
     init(json: [String: AnyObject]) {
         if let entryName = json["im:name"] as? [String: AnyObject], name = entryName["label"] as? String {
@@ -21,6 +22,10 @@ class MediaEntryModel: CustomStringConvertible, NSCoding {
         
         if let entrySummary = json["summary"] as? [String: AnyObject], summary = entrySummary["label"] as? String {
             self.summary = summary
+        }
+        
+        if let entryArtist = json["im:artist"] as? [String: AnyObject], artistName = entryArtist["label"] as? String {
+            self.artistName = artistName
         }
         
         if let link = json["link"] as? [[String: AnyObject]] {
@@ -35,18 +40,12 @@ class MediaEntryModel: CustomStringConvertible, NSCoding {
             }
 
         }
-    }
-    
-    @objc required init?(coder aDecoder: NSCoder) {
-        self.name = aDecoder.decodeObjectForKey("name") as? String
-        self.summary = aDecoder.decodeObjectForKey("summary") as? String
-        self.previewURL = aDecoder.decodeObjectForKey("previewURL") as? String
-    }
-    
-    @objc func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.name, forKey: "name")
-        aCoder.encodeObject(self.summary, forKey: "summary")
-        aCoder.encodeObject(self.previewURL, forKey: "previewURL")
+        
+        if let imageArray = json["im:image"] as? [[String: AnyObject]], image = imageArray.last, imagePath = image["label"] as? String {
+            self.imagePath = imagePath
+        }
+        
+        print(self.imagePath)
     }
     
     var description: String {

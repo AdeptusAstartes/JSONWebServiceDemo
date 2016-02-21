@@ -57,7 +57,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let genre = self.genres[section]
-        return genre.name
+        return genre.genreName
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -67,7 +67,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let genre = self.genres[indexPath.section]
         let subgenre = genre.subgenres[indexPath.row]
         
-        if let name = subgenre.name {
+        if let name = subgenre.genreName {
             tableViewCell.textLabel?.text = name
         }
         
@@ -80,8 +80,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let genre = self.genres[indexPath.section]
         let subgenre = genre.subgenres[indexPath.row]
         
-        let viewController = SubgenreViewController(subgenre: subgenre)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        if let genreName = genre.genreName {
+            let viewController = SubgenreViewController(subgenre: subgenre, mainGenreName: genreName)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {

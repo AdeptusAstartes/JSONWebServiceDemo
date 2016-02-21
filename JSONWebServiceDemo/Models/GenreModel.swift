@@ -10,7 +10,7 @@ import UIKit
 
 class GenreModel: CustomStringConvertible, NSCoding {
     var genreId: String? = nil
-    var name:String? = nil
+    var genreName:String? = nil
     var topSongsURL: String? = nil
     var isSubgenre: Bool = false
     var subgenres: [GenreModel] = Array();
@@ -21,7 +21,7 @@ class GenreModel: CustomStringConvertible, NSCoding {
         }
         
         if let name = json["name"] as? String {
-            self.name = name
+            self.genreName = name
         }
         
         if let rssUrls = json["rssUrls"] as? [String: AnyObject], topSongsURL = rssUrls["topSongs"] as? String {
@@ -41,7 +41,7 @@ class GenreModel: CustomStringConvertible, NSCoding {
     
     @objc required init?(coder aDecoder: NSCoder) {
         self.genreId = aDecoder.decodeObjectForKey("genreId") as? String
-        self.name = aDecoder.decodeObjectForKey("name") as? String
+        self.genreName = aDecoder.decodeObjectForKey("name") as? String
         self.topSongsURL = aDecoder.decodeObjectForKey("topSongsURL") as? String
         self.isSubgenre = aDecoder.decodeBoolForKey("isSubgenre")
         self.subgenres = aDecoder.decodeObjectForKey("subgenres") as! [GenreModel]
@@ -49,14 +49,14 @@ class GenreModel: CustomStringConvertible, NSCoding {
     
     @objc func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(self.genreId, forKey: "genreId")
-        aCoder.encodeObject(self.name, forKey: "name")
+        aCoder.encodeObject(self.genreName, forKey: "name")
         aCoder.encodeObject(self.topSongsURL, forKey: "topSongsURL")
         aCoder.encodeBool(self.isSubgenre, forKey: "isSubgenre")
         aCoder.encodeObject(self.subgenres, forKey: "subgenres")
     }
     
     var description: String {
-        return "genreId: \(self.genreId)\nname: \(self.name)\ntopSongsURL: \(self.topSongsURL)\nsubgenres: \(self.subgenres.count)\n\n"
+        return "genreId: \(self.genreId)\nname: \(self.genreName)\ntopSongsURL: \(self.topSongsURL)\nsubgenres: \(self.subgenres.count)\n\n"
     }
     
 }
