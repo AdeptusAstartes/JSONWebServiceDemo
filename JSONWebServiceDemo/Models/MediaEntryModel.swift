@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MediaEntryModel: CustomStringConvertible {
+class MediaEntryModel: CustomStringConvertible, NSCoding {
     var name:String? = nil
     var summary: String? = nil
     var previewURL: String? = nil
@@ -27,13 +27,25 @@ class MediaEntryModel: CustomStringConvertible {
                 if let attributes = item["attributes"] as? [String: AnyObject], type = attributes["im:assetType"] as? String {
                     if (type == "preview") {
                         if let previewURL = attributes["href"] as? String {
-                            self.previewURL = previewURL;
+                            self.previewURL = previewURL
                         }
                     }
                 }
             }
 
         }
+    }
+    
+    @objc required init?(coder aDecoder: NSCoder) {
+        self.name = aDecoder.decodeObjectForKey("name") as? String
+        self.summary = aDecoder.decodeObjectForKey("summary") as? String
+        self.previewURL = aDecoder.decodeObjectForKey("previewURL") as? String
+    }
+    
+    @objc func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.name, forKey: "name")
+        aCoder.encodeObject(self.summary, forKey: "summary")
+        aCoder.encodeObject(self.previewURL, forKey: "previewURL")
     }
     
     var description: String {

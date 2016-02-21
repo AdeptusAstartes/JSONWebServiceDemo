@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
             self.addChildViewController(moviePlayerController)
             self.view.addSubview(moviePlayerController.view)
             moviePlayerController.view.frame = self.view.frame
-            //moviePlayer.play()
+            moviePlayer.play()
         }
     }
 

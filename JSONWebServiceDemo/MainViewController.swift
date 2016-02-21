@@ -27,7 +27,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.refreshFeed();
+        let genreBarButtonItem = UIBarButtonItem(title: "Genres", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("genreButtonHit:"))
+        genreBarButtonItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: UIControlState.Normal)
+        self.navigationItem.leftBarButtonItem = genreBarButtonItem
+        
+        self.refreshFeed()
+    }
+    
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     
@@ -65,5 +74,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             self.tableView.reloadData()
         }
+    }
+    
+    //MARK: - Internal Methods
+    func genreButtonHit(sender: UIBarButtonItem) {
+        
     }
 }

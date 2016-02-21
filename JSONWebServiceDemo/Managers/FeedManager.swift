@@ -10,11 +10,10 @@ import UIKit
 import Alamofire
 
 class FeedManager {
-    static let topMoviesURL: String = "https://itunes.apple.com/us/rss/topmovies/limit=100/json"
-    static let topSongsURL: String = "https://itunes.apple.com/us/rss/topsongs/genre=21/limit=100/json"
+    let topSongsURLTemplate: String = "https://itunes.apple.com/us/rss/topsongs/genre=21/limit=100/json"
     
     func getTopMovies(completion: (results: [MediaEntryModel]) -> Void) {
-        Alamofire.request(.GET, FeedManager.topMoviesURL).responseJSON { (response) -> Void in
+        Alamofire.request(.GET, self.topSongsURLTemplate).responseJSON { (response) -> Void in
 
             var mediaEntries: [MediaEntryModel] = Array()
             

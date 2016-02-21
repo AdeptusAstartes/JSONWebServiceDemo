@@ -15,6 +15,8 @@
 		F2372DA61C79938100475C92 /* MediaEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DA51C79938100475C92 /* MediaEntryModel.swift */; };
 		F2372DA91C79A84E00475C92 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DA71C79A84E00475C92 /* DetailViewController.swift */; };
 		F2372DAA1C79A84E00475C92 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2372DA81C79A84E00475C92 /* DetailViewController.xib */; };
+		F2372DAC1C7A3B1000475C92 /* GenreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DAB1C7A3B1000475C92 /* GenreManager.swift */; };
+		F2372DAE1C7A3BA800475C92 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DAD1C7A3BA800475C92 /* GenreModel.swift */; };
 		F2C194CF1C77F1B800CA7849 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C194CD1C77F1B800CA7849 /* MainViewController.swift */; };
 		F2C194D01C77F1B800CA7849 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C194CE1C77F1B800CA7849 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,8 @@
 		F2372DA51C79938100475C92 /* MediaEntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaEntryModel.swift; sourceTree = "<group>"; };
 		F2372DA71C79A84E00475C92 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F2372DA81C79A84E00475C92 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		F2372DAB1C7A3B1000475C92 /* GenreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreManager.swift; sourceTree = "<group>"; };
+		F2372DAD1C7A3BA800475C92 /* GenreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		F2C194CD1C77F1B800CA7849 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F2C194CE1C77F1B800CA7849 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				F2372DA11C798DB200475C92 /* FeedManager.swift */,
+				F2372DAB1C7A3B1000475C92 /* GenreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				F2372DA51C79938100475C92 /* MediaEntryModel.swift */,
+				F2372DAD1C7A3BA800475C92 /* GenreModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,8 +246,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2372DA21C798DB200475C92 /* FeedManager.swift in Sources */,
+				F2372DAE1C7A3BA800475C92 /* GenreModel.swift in Sources */,
 				F235D0731C77E986008310D8 /* AppDelegate.swift in Sources */,
 				F2372DA91C79A84E00475C92 /* DetailViewController.swift in Sources */,
+				F2372DAC1C7A3B1000475C92 /* GenreManager.swift in Sources */,
 				F2C194CF1C77F1B800CA7849 /* MainViewController.swift in Sources */,
 				F2372DA61C79938100475C92 /* MediaEntryModel.swift in Sources */,
 			);
