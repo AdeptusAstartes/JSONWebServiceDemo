@@ -24,27 +24,27 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcf-uK-eRi">
-                        <rect key="frame" x="93" y="8" width="499" height="21"/>
+                        <rect key="frame" x="93" y="8" width="438" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERj-a6-yRr">
-                        <rect key="frame" x="93" y="37" width="499" height="17"/>
+                        <rect key="frame" x="93" y="37" width="438" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="zcf-uK-eRi" secondAttribute="trailing" id="0jK-ZO-cSN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zcf-uK-eRi" secondAttribute="trailing" constant="61" id="0jK-ZO-cSN"/>
                     <constraint firstItem="dNd-Y2-Htx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="2H4-2Q-AO2"/>
                     <constraint firstItem="dNd-Y2-Htx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="SsI-ZM-z43"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ERj-a6-yRr" secondAttribute="trailing" id="UDS-wE-sfR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ERj-a6-yRr" secondAttribute="trailing" constant="61" id="UDS-wE-sfR"/>
                     <constraint firstItem="ERj-a6-yRr" firstAttribute="leading" secondItem="dNd-Y2-Htx" secondAttribute="trailing" constant="8" id="Xcv-No-xWE"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ERj-a6-yRr" secondAttribute="bottom" constant="22" id="bVC-9I-UT7"/>
                     <constraint firstAttribute="bottomMargin" secondItem="dNd-Y2-Htx" secondAttribute="bottom" constant="-9" id="cjP-2a-vtb"/>
                     <constraint firstAttribute="topMargin" secondItem="zcf-uK-eRi" secondAttribute="top" id="ehu-E0-fTH"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="zcf-uK-eRi" secondAttribute="trailing" id="szs-rx-rY2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zcf-uK-eRi" secondAttribute="trailing" constant="61" id="szs-rx-rY2"/>
                     <constraint firstItem="zcf-uK-eRi" firstAttribute="leading" secondItem="dNd-Y2-Htx" secondAttribute="trailing" constant="8" id="tns-94-Hod"/>
                     <constraint firstItem="ERj-a6-yRr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zcf-uK-eRi" secondAttribute="bottom" constant="8" id="zGc-dL-Gwn"/>
                 </constraints>

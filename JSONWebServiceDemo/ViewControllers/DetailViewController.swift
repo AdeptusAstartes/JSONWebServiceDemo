@@ -27,14 +27,14 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         if let previewURL = self.mediaEntry.previewURL, url = NSURL(string: previewURL) {
-            let moviePlayer = AVPlayer(URL: url)
+            let avPlayer = AVPlayer(URL: url)
             let moviePlayerController = AVPlayerViewController()
             
-            moviePlayerController.player = moviePlayer
+            moviePlayerController.player = avPlayer
             self.addChildViewController(moviePlayerController)
             self.view.addSubview(moviePlayerController.view)
             moviePlayerController.view.frame = self.view.frame
-            moviePlayer.play()
+            avPlayer.play()
         }
     }
 

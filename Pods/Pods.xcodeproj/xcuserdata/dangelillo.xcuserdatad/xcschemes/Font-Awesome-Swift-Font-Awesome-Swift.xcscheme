@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E5A8387F29E4A8B8C72551FF'
-               BlueprintName = 'AlamofireNetworkActivityIndicator'
+               BlueprintIdentifier = '2BCF4A5C8E177B01541DF99F'
+               BlueprintName = 'Font-Awesome-Swift-Font-Awesome-Swift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'AlamofireNetworkActivityIndicator.framework'>
+               BuildableName = 'Font-Awesome-Swift.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

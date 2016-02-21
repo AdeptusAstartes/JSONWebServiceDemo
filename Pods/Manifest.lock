@@ -4,15 +4,18 @@ PODS:
     - Alamofire (~> 3.1)
   - AlamofireNetworkActivityIndicator (1.0.0):
     - Alamofire (~> 3.2)
+  - Font-Awesome-Swift (1.4.5)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AlamofireNetworkActivityIndicator
+  - Font-Awesome-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
   AlamofireImage: 8256f88835f58257a76ea2738d3773be5057f7ed
   AlamofireNetworkActivityIndicator: 34e6fe7ebb5d8df76cc55fbf83a6087ae6457344
+  Font-Awesome-Swift: 0af30357ab68dbcfa2d211254a5c11a158261112
 
 COCOAPODS: 0.39.0

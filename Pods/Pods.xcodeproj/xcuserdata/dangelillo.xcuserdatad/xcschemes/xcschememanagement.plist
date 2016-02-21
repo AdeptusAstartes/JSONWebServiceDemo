@@ -19,6 +19,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Font-Awesome-Swift-Font-Awesome-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Font-Awesome-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-JSONWebServiceDemo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>54DFF94514C6B301515305989BCF958F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C378C952C0375044ECCC0748C8C8226</key>
+		<key>9059506BB06F7BE16783C81066F50605</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5103AA3B86FD939D2C77DC3043B8AC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

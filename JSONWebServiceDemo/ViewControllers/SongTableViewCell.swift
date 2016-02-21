@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import Font_Awesome_Swift
 
 class SongTableViewCell: UITableViewCell {
 
@@ -16,13 +17,22 @@ class SongTableViewCell: UITableViewCell {
     @IBOutlet weak var artistNameLabel: UILabel!
 
     var mediaEntry: MediaEntryModel? = nil
+    var playButton: UIButton? = nil;
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.playButton = UIButton(type: UIButtonType.Custom)
+        self.showPlay()
+        
         self.preservesSuperviewLayoutMargins = false
         self.separatorInset = UIEdgeInsetsZero
         self.layoutMargins = UIEdgeInsetsZero
+    }
+    
+    override func prepareForReuse() {
+        self.albumArtworkImageView.af_cancelImageRequest()
+        self.showPlay()
     }
     
     func setMediaEntry(mediaEntry: MediaEntryModel) {
@@ -39,6 +49,18 @@ class SongTableViewCell: UITableViewCell {
         if let imagePath = self.mediaEntry?.imagePath, url = NSURL(string: imagePath) {
             self.albumArtworkImageView.af_setImageWithURL(url)
         }
+    }
+    
+    func showPlay() {
+        self.playButton?.setFAText(prefixText: "", icon: FAType.FAPlayCircle, postfixText: "", size: 25, forState: UIControlState.Normal)
+        self.playButton?.sizeToFit()
+        self.accessoryView = self.playButton
+    }
+    
+    func showPause() {
+        self.playButton?.setFAText(prefixText: "", icon: FAType.FAPause, postfixText: "", size: 25, forState: UIControlState.Normal)
+        self.playButton?.sizeToFit()
+        self.accessoryView = self.playButton
     }
     
 }
