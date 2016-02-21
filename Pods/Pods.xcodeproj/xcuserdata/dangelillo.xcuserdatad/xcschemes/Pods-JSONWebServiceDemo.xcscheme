@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '49D43408AED8C9D3FAD179BA'
+               BlueprintIdentifier = '82D59669515A44C4EB79E72A'
                BlueprintName = 'Pods-JSONWebServiceDemo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_JSONWebServiceDemo.framework'>

@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-JSONWebServiceDemo/Alamofire.framework"
+  install_framework "Pods-JSONWebServiceDemo/AlamofireImage.framework"
   install_framework "Pods-JSONWebServiceDemo/AlamofireNetworkActivityIndicator.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-JSONWebServiceDemo/Alamofire.framework"
+  install_framework "Pods-JSONWebServiceDemo/AlamofireImage.framework"
   install_framework "Pods-JSONWebServiceDemo/AlamofireNetworkActivityIndicator.framework"
 fi

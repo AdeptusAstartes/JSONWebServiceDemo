@@ -14,7 +14,7 @@ class SubgenreViewController: UIViewController, UITableViewDataSource, UITableVi
     var subgenre: GenreModel? = nil
     var mediaEntries: [MediaEntryModel] = Array()
     var feedManager: FeedManager
-    let subgenreReuseIdentifer: String = "subgenreReuseIdentifer"
+    let songTableViewCellReuseIdentifier: String = "songTableViewCellReuseIdentifier"
     
     init(subgenre: GenreModel, mainGenreName: String) {
         self.subgenre = subgenre
@@ -34,7 +34,10 @@ class SubgenreViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.subgenreReuseIdentifer)
+        self.tableView.estimatedRowHeight = 85.0
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+
+        self.tableView.registerNib(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: self.songTableViewCellReuseIdentifier)
         
         self.refreshFeed()
     }
@@ -55,15 +58,11 @@ class SubgenreViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let tableViewCell = tableView.dequeueReusableCellWithIdentifier(self.subgenreReuseIdentifer, forIndexPath: indexPath) as UITableViewCell
+        let tableViewCell = tableView.dequeueReusableCellWithIdentifier(self.songTableViewCellReuseIdentifier, forIndexPath: indexPath) as! SongTableViewCell
         tableViewCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         let mediaEntry = self.mediaEntries[indexPath.row];
-        
-        if let name = mediaEntry.name {
-            tableViewCell.textLabel?.text = name
-        }
-        
+        tableViewCell.setMediaEntry(mediaEntry);
         return tableViewCell
     }
     

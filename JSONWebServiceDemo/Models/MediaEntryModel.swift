@@ -44,8 +44,6 @@ class MediaEntryModel: CustomStringConvertible {
         if let imageArray = json["im:image"] as? [[String: AnyObject]], image = imageArray.last, imagePath = image["label"] as? String {
             self.imagePath = imagePath
         }
-        
-        print(self.imagePath)
     }
     
     var description: String {
