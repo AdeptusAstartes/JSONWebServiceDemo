@@ -15,8 +15,6 @@
 		F2372DA61C79938100475C92 /* MediaEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DA51C79938100475C92 /* MediaEntryModel.swift */; };
 		F2372DAC1C7A3B1000475C92 /* GenreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DAB1C7A3B1000475C92 /* GenreManager.swift */; };
 		F2372DAE1C7A3BA800475C92 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DAD1C7A3BA800475C92 /* GenreModel.swift */; };
-		F2372DBC1C7A658900475C92 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DB61C7A658900475C92 /* DetailViewController.swift */; };
-		F2372DBD1C7A658900475C92 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2372DB71C7A658900475C92 /* DetailViewController.xib */; };
 		F2372DBE1C7A658900475C92 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DB81C7A658900475C92 /* MainViewController.swift */; };
 		F2372DBF1C7A658900475C92 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2372DB91C7A658900475C92 /* MainViewController.xib */; };
 		F2372DC01C7A658900475C92 /* SubgenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2372DBA1C7A658900475C92 /* SubgenreViewController.swift */; };
@@ -38,8 +36,6 @@
 		F2372DA51C79938100475C92 /* MediaEntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaEntryModel.swift; sourceTree = "<group>"; };
 		F2372DAB1C7A3B1000475C92 /* GenreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreManager.swift; sourceTree = "<group>"; };
 		F2372DAD1C7A3BA800475C92 /* GenreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
-		F2372DB61C7A658900475C92 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		F2372DB71C7A658900475C92 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		F2372DB81C7A658900475C92 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F2372DB91C7A658900475C92 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		F2372DBA1C7A658900475C92 /* SubgenreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubgenreViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +126,6 @@
 		F2372DB51C7A658900475C92 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2372DB61C7A658900475C92 /* DetailViewController.swift */,
-				F2372DB71C7A658900475C92 /* DetailViewController.xib */,
 				F2372DB81C7A658900475C92 /* MainViewController.swift */,
 				F2372DB91C7A658900475C92 /* MainViewController.xib */,
 				F2372DBA1C7A658900475C92 /* SubgenreViewController.swift */,
@@ -205,7 +199,6 @@
 			files = (
 				F2372DC71C7A66ED00475C92 /* SongTableViewCell.xib in Resources */,
 				F235D07A1C77E986008310D8 /* Assets.xcassets in Resources */,
-				F2372DBD1C7A658900475C92 /* DetailViewController.xib in Resources */,
 				F2372DC11C7A658900475C92 /* SubgenreViewController.xib in Resources */,
 				F2372D9E1C798C2400475C92 /* LaunchScreen.storyboard in Resources */,
 				F2372DBF1C7A658900475C92 /* MainViewController.xib in Resources */,
@@ -272,7 +265,6 @@
 				F2372DA21C798DB200475C92 /* FeedManager.swift in Sources */,
 				F2372DAE1C7A3BA800475C92 /* GenreModel.swift in Sources */,
 				F235D0731C77E986008310D8 /* AppDelegate.swift in Sources */,
-				F2372DBC1C7A658900475C92 /* DetailViewController.swift in Sources */,
 				F2372DC61C7A66ED00475C92 /* SongTableViewCell.swift in Sources */,
 				F2372DAC1C7A3B1000475C92 /* GenreManager.swift in Sources */,
 				F2372DA61C79938100475C92 /* MediaEntryModel.swift in Sources */,
